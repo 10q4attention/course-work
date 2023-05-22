@@ -1,4 +1,4 @@
 ﻿  CourseWindow.cpp
-D:\Программирование\CourseWork\CourseWork\CourseWindow.h(245,14): warning C4834: отмена возвращаемого значения функции с атрибутом "nodiscard"
+D:\Программирование\CourseWork\CourseWork\CourseWindow.h(246,14): warning C4834: отмена возвращаемого значения функции с атрибутом "nodiscard"
   CourseWindow.obj : обнаружен модуль MSIL; для MSIL последовательная компоновка отключена; выполняется полная компоновка
   CourseWork.vcxproj -> D:\Программирование\CourseWork\x64\Debug\CourseWork.exe

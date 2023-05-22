@@ -4,12 +4,26 @@
 #include <string>
 using namespace std;
 
+std::string RemoveTrailingZeros(const std::string& input) {
+    std::string result = input;
+
+    size_t found = result.find_last_not_of('0');
+    if (found != std::string::npos && result[found] == '.')
+        found--;
+
+    result = result.substr(0, found + 1);
+
+    return result;
+}
+
 class type1 {
 public:
     string Get_answer() {
         return ("Ответом является любое значение Х");
     }
-  
+    string show() {
+        return ("Уравнение 0 = 0");
+    }
 };
 
 class type2 {
@@ -22,15 +36,24 @@ public:
     string  Get_answer() {
         return ("Ответом является Х = 0");
     }
- 
+    string show() {
+        return ("Уравнение " + (RemoveTrailingZeros(to_string(A))) + "*x^2 = 0");
+    }
 };
 
 class type3 {
+private:
+    double C;
 public:
+    type3(double c1) {
+        C = c1;
+    }
     string  Get_answer() {
         return ("Корней нет");
     }
-
+    string show() {
+        return (RemoveTrailingZeros(to_string(C)) +  " = 0");
+    }
 };
 
 class type4 {
@@ -70,6 +93,10 @@ public:
             return ("Приближенно, один из корней уравнения: " + to_string(x));
         }
     }
+
+    string show() {
+        return ("Уравнение " + RemoveTrailingZeros(to_string(A)) + "*x^2 + " + RemoveTrailingZeros(to_string(C)) + " = 0");
+    }
 };
 
 class type5 {
@@ -95,6 +122,10 @@ public:
             }
         }
         return ("Приближенно, один из корней уравнения: " + to_string(x));
+    }
+
+    string show() {
+        return  ("Уравнение " + RemoveTrailingZeros(to_string(B)) + "*x + " + RemoveTrailingZeros(to_string(C)) + " = 0");
     }
 };
 
@@ -143,6 +174,10 @@ public:
             return  ("Приближенно, один из корней уравнения:" + to_string(x));
         }
     }
+
+    string show() {
+        return ("Уравнение " + RemoveTrailingZeros(to_string(A)) + "*x^2 + "  + RemoveTrailingZeros(to_string(B)) + "*x + " + RemoveTrailingZeros(to_string(C)) + " = 0");
+    }
 };
 
 class type7 {
@@ -154,6 +189,9 @@ public:
     }
     string Get_answer() {
         return ("Корень уравнения: x = 0");
+    }
+    string show() {
+        return ("Уравнение " + RemoveTrailingZeros(to_string(B)) + "*x = 0");
     }
  
 };
@@ -184,6 +222,10 @@ public:
             }
         }
         return ("Приближенно, один из корней уравнения: " + to_string(x));
+    }
+
+    string show() {
+        return ("Уравнение " + RemoveTrailingZeros(to_string(A)) + "*x^2 + " + RemoveTrailingZeros(to_string(B)) + "*x = 0 ");
     }
 };
 

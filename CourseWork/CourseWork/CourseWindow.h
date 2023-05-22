@@ -62,7 +62,8 @@ namespace CourseWork {
 	private: String^ second_c = " ";
 	private: String^ third_c = " ";
 	private: System::Windows::Forms::Label^ label_answer;
-	private: System::Windows::Forms::Label^ label4;
+	private: System::Windows::Forms::Label^ label_main;
+
 	private: System::Windows::Forms::Label^ label5;
 	private: System::Windows::Forms::Label^ label_podbor;
 
@@ -98,7 +99,7 @@ namespace CourseWork {
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->label_answer = (gcnew System::Windows::Forms::Label());
-			this->label4 = (gcnew System::Windows::Forms::Label());
+			this->label_main = (gcnew System::Windows::Forms::Label());
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->label_podbor = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
@@ -175,17 +176,17 @@ namespace CourseWork {
 			this->label_answer->TabIndex = 10;
 			this->label_answer->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
-			// label4
+			// label_main
 			// 
-			this->label4->BackColor = System::Drawing::Color::White;
-			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label_main->BackColor = System::Drawing::Color::White;
+			this->label_main->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->label4->Location = System::Drawing::Point(188, 9);
-			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(424, 30);
-			this->label4->TabIndex = 11;
-			this->label4->Text = L"ax^2 + bx + c = 0";
-			this->label4->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->label_main->Location = System::Drawing::Point(188, 9);
+			this->label_main->Name = L"label_main";
+			this->label_main->Size = System::Drawing::Size(424, 30);
+			this->label_main->TabIndex = 11;
+			this->label_main->Text = L"ax^2 + bx + c = 0";
+			this->label_main->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// label5
 			// 
@@ -216,7 +217,7 @@ namespace CourseWork {
 			this->ClientSize = System::Drawing::Size(784, 461);
 			this->Controls->Add(this->label_podbor);
 			this->Controls->Add(this->label5);
-			this->Controls->Add(this->label4);
+			this->Controls->Add(this->label_main);
 			this->Controls->Add(this->label_answer);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->label2);
@@ -300,42 +301,49 @@ namespace CourseWork {
 				type2 eq2(Convert::ToInt32(first_c));
 				label_answer->Text = ConvertToManagedString(eq2.Get_answer());
 				label_podbor->Text = "Невозможно решить методом подбора";
+				label_main->Text = ConvertToManagedString(eq2.show());
 			}
 			//3
 			else if (first_c == "0" && second_c == "0" && third_c != "0") {
-				type3 eq3;
+				type3 eq3(Convert::ToInt32(third_c));;
 				label_answer->Text = ConvertToManagedString(eq3.Get_answer());
 				label_podbor->Text = "Невозможно решить методом подбора";
+				label_main->Text = ConvertToManagedString(eq3.show());
 			}
 			//4
 			else if (first_c != "0" && second_c == "0" && third_c != "0") {
 				type4 eq4(Convert::ToInt32(first_c), Convert::ToInt32(third_c));
 				label_answer->Text = ConvertToManagedString(eq4.Get_answer());
 				label_podbor->Text = ConvertToManagedString(eq4.Get_answer_podbor());
+				label_main->Text = ConvertToManagedString(eq4.show());
 			}
 			//5
 			else if (first_c == "0" && second_c != "0" && third_c != "0") {
 				type5 eq5(Convert::ToInt32(second_c), Convert::ToInt32(third_c));
 				label_answer->Text = ConvertToManagedString(eq5.Get_answer());
 				label_podbor->Text = ConvertToManagedString(eq5.Get_answer_podbor());
+				label_main->Text = ConvertToManagedString(eq5.show());
 			}
 			//6
 			else if (first_c != "0" && second_c != "0" && third_c != "0") {
 				type6 eq6(Convert::ToInt32(first_c), Convert::ToInt32(second_c), Convert::ToInt32(third_c));
 				label_answer->Text = ConvertToManagedString(eq6.Get_answer());
 				label_podbor->Text = ConvertToManagedString(eq6.Get_answer_podbor());
+				label_main->Text = ConvertToManagedString(eq6.show());
 			}
 			//7
 			else if (first_c == "0" && second_c != "0" && third_c == "0") {
 				type7 eq7(Convert::ToInt32(second_c));
 				label_answer->Text = ConvertToManagedString(eq7.Get_answer());
 				label_podbor->Text = "Невозможно решить методом подбора";
+				label_main->Text = ConvertToManagedString(eq7.show());
 			}
 			//8
 			else if (first_c != "0" && second_c != "0" && third_c == "0") {
 				type8 eq8(Convert::ToInt32(first_c), Convert::ToInt32(second_c));
 				label_answer->Text = ConvertToManagedString(eq8.Get_answer());
 				label_podbor->Text = ConvertToManagedString(eq8.Get_answer_podbor());
+				label_main->Text = ConvertToManagedString(eq8.show());
 			}
 		}
 
