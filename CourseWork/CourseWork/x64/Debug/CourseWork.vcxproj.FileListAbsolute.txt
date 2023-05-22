@@ -1,0 +1,4 @@
+D:\Программирование\CourseWork\CourseWork\x64\Debug\CourseWork.vcxproj.AssemblyReference.cache
+D:\Программирование\CourseWork\CourseWork\x64\Debug\CourseWork.vcxproj.SuggestedBindingRedirects.cache
+D:\Программирование\CourseWork\CourseWork\x64\Debug\CourseWork.CourseWindow.resources
+D:\Программирование\CourseWork\CourseWork\x64\Debug\CourseWork.vcxproj.GenerateResource.cache
